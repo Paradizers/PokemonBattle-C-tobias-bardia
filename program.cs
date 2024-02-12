@@ -14,7 +14,7 @@ namespace PokeBattle
             // Second Trainer
             Console.WriteLine("Second trainer's name:");
             string secondTrainer = Console.ReadLine();
-
+             
             // Charmander name
             Console.WriteLine("Give a name to your Charmander:");
             string charmanderName = Console.ReadLine();
