@@ -1,5 +1,4 @@
-﻿using ConsoleApp1;
-using System;
+﻿using System;
 
 namespace PokeBattle
 {
@@ -14,116 +13,132 @@ namespace PokeBattle
             // Second Trainer
             Console.WriteLine("Second trainer's name:");
             string secondTrainer = Console.ReadLine();
-             
-            // Charmander name
-            Console.WriteLine("Give a name to your Charmander:");
-            string charmanderName = Console.ReadLine();
-            Charmander charmander = new(charmanderName);
 
-            // Charmander battle cry
-            Console.WriteLine("Charmander's battle cry:");
-            for (int i = 0; i < 10; i++)
+            // Create trainers with their pokemons
+            Trainer trainer1 = new Trainer(firstTrainer);
+            Trainer trainer2 = new Trainer(secondTrainer);
+
+            // Add pokemons to trainers
+            trainer1.AddPokemon(new Charmander("Charmander1"));
+            trainer1.AddPokemon(new Squirtle("Squirtle1"));
+            trainer1.AddPokemon(new Bulbasaur("Bulbasaur1"));
+            trainer1.AddPokemon(new Pikachu("Pikachu1"));
+            trainer1.AddPokemon(new Eevee("Eevee1"));
+            trainer1.AddPokemon(new Jigglypuff("Jigglypuff1"));
+
+            trainer2.AddPokemon(new Charmander("Charmander2"));
+            trainer2.AddPokemon(new Squirtle("Squirtle2"));
+            trainer2.AddPokemon(new Bulbasaur("Bulbasaur2"));
+            trainer2.AddPokemon(new Pikachu("Pikachu2"));
+            trainer2.AddPokemon(new Eevee("Eevee2"));
+            trainer2.AddPokemon(new Jigglypuff("Jigglypuff2"));
+
+            // Show pokemons of each trainer
+            Console.WriteLine($"{firstTrainer}'s pokemons:");
+            trainer1.DisplayPokemons();
+            Console.WriteLine($"{secondTrainer}'s pokemons:");
+            trainer2.DisplayPokemons();
+
+            // Pokeball functionality
+            Random random = new Random();
+            Console.WriteLine("Trainer 1 threw a Pokeball!");
+            int randomIndex = random.Next(trainer2.Pokemons.Count);
+            Pokemon capturedPokemon = trainer2.Pokemons[randomIndex];
+            Console.WriteLine($"{capturedPokemon.Name} roared!");
+            Console.WriteLine("Trainer 1 threw another Pokeball!");
+
+            Console.WriteLine("Do you want to recall the captured Pokemon? (yes/no)");
+            string recallChoice = Console.ReadLine();
+            if (recallChoice.ToLower() == "yes")
             {
-                charmander.BattleCry();
+                trainer2.RecallPokemon(capturedPokemon);
+                Console.WriteLine($"Trainer 1 successfully recalled {capturedPokemon.Name}!");
             }
-
-            // Charmander rename loop
-            while (true)
+            else
             {
-                Console.WriteLine("Would you like to give Charmander a new name? (yes/no)");
-                string answer = Console.ReadLine();
-                if (answer == "no")
-                    break;
-                else if (answer == "yes")
-                {
-                    Console.WriteLine("Enter the new name:");
-                    charmanderName = Console.ReadLine();
-                    charmander.SetName(charmanderName);
-
-                    // Charmander battle cry after renaming
-                    Console.WriteLine("Charmander's battle cry:");
-                    for (int i = 0; i < 10; i++)
-                    {
-                        charmander.BattleCry();
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input. Please enter 'yes' or 'no'.");
-                }
+                Console.WriteLine($"Trainer 1 chose not to recall {capturedPokemon.Name}.");
             }
 
             Console.WriteLine("Thanks for playing!");
-
-            // Create Charmander pokemon instance
-            Pokemon charmanderPokemon = new Pokemon("Charmander", "fire", "water");
-
-            // Create Pokeball with Charmander
-            Pokeball pokeball = new Pokeball(50, "red", charmanderPokemon);
-
-            // Display Charmander's name from the Pokeball
-            Console.WriteLine(pokeball.pokemon.name);
         }
+    }
+
+    class Trainer
+    {
+        public string Name { get; }
+        public List<Pokemon> Pokemons { get; }
+
+        public Trainer(string name)
+        {
+            Name = name;
+            Pokemons = new List<Pokemon>();
+        }
+
+        public void AddPokemon(Pokemon pokemon)
+        {
+            Pokemons.Add(pokemon);
+        }
+
+        public void DisplayPokemons()
+        {
+            foreach (var pokemon in Pokemons)
+            {
+                Console.WriteLine(pokemon.Name);
+            }
+        }
+
+        public void RecallPokemon(Pokemon pokemon)
+        {
+            Pokemons.Remove(pokemon);
+        }
+    }
+
+    // Existing Pokemon classes
+    class Charmander : Pokemon
+    {
+        public Charmander(string name) : base(name, "Fire", "Water") { }
+    }
+
+    class Squirtle : Pokemon
+    {
+        public Squirtle(string name) : base(name, "Water", "Grass") { }
+    }
+
+    class Bulbasaur : Pokemon
+    {
+        public Bulbasaur(string name) : base(name, "Grass", "Fire") { }
+    }
+
+    class Pikachu : Pokemon
+    {
+        public Pikachu(string name) : base(name, "Electric", "Ground") { }
+    }
+    class Eevee : Pokemon
+    {
+        public Eevee(string name) : base(name, "Normal", "Fighting") { }
+    }
+
+    class Jigglypuff : Pokemon
+    {
+        public Jigglypuff(string name) : base(name, "Fairy", "Steel") { }
     }
 
     class Pokemon
     {
-        public string name;
-        public string type;
-        public string weakness;
+        public string Name { get; }
+        public string Type { get; }
+        public string Weakness { get; }
 
-        public Pokemon(string name, string strength, string weakness)
+        public Pokemon(string name, string type, string weakness)
         {
-            this.name = name;
-            this.type = strength;
-            this.weakness = weakness;
+            Name = name;
+            Type = type;
+            Weakness = weakness;
         }
 
         public string DoBattlecry()
         {
-            return $"GROWLLLL ik ben {name}";
-        }
-    }
-
-    internal class Pokeball
-    {
-        public int catchRate;
-        public string color;
-        public Pokemon pokemon;
-
-        public Pokeball(int catchRate, string color, Pokemon pokemon)
-        {
-            this.catchRate = catchRate;
-            this.color = color;
-            this.pokemon = pokemon;
-        }
-
-        public void Open()
-        {
-            // pokebal openen
-        }
-    }
-}
-
-namespace ConsoleApp1
-{
-    class Charmander
-    {
-        private string nickname;
-
-        public Charmander(string nickname)
-        {
-            this.nickname = nickname;
-        }
-
-        public void SetName(string newName)
-        {
-            nickname = newName;
-        }
-
-        public void BattleCry()
-        {
-            Console.WriteLine($"{nickname} shouts: Charmander!");
+            return $"GROWLLLL I am {Name}";
         }
     }
 }

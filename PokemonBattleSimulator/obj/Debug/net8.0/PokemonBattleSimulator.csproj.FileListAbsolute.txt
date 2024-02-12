@@ -1,0 +1,15 @@
+C:\Users\shind\source\repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\bin\Debug\net8.0\PokemonBattleSimulator.exe
+C:\Users\shind\source\repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\bin\Debug\net8.0\PokemonBattleSimulator.deps.json
+C:\Users\shind\source\repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\bin\Debug\net8.0\PokemonBattleSimulator.runtimeconfig.json
+C:\Users\shind\source\repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\bin\Debug\net8.0\PokemonBattleSimulator.dll
+C:\Users\shind\source\repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\bin\Debug\net8.0\PokemonBattleSimulator.pdb
+C:\Users\shind\source\repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\obj\Debug\net8.0\PokemonBattleSimulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shind\source\repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\obj\Debug\net8.0\PokemonBattleSimulator.AssemblyInfoInputs.cache
+C:\Users\shind\source\repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\obj\Debug\net8.0\PokemonBattleSimulator.AssemblyInfo.cs
+C:\Users\shind\source\repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\obj\Debug\net8.0\PokemonBattleSimulator.csproj.CoreCompileInputs.cache
+C:\Users\shind\source\repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\obj\Debug\net8.0\PokemonBattleSimulator.sourcelink.json
+C:\Users\shind\source\repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\obj\Debug\net8.0\PokemonBattleSimulator.dll
+C:\Users\shind\source\repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\obj\Debug\net8.0\refint\PokemonBattleSimulator.dll
+C:\Users\shind\source\repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\obj\Debug\net8.0\PokemonBattleSimulator.pdb
+C:\Users\shind\source\repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\obj\Debug\net8.0\PokemonBattleSimulator.genruntimeconfig.cache
+C:\Users\shind\source\repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\obj\Debug\net8.0\ref\PokemonBattleSimulator.dll
