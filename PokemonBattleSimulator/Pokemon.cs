@@ -2,46 +2,80 @@
 
 namespace PokemonBattleSimulator
 {
-    class Pokemon
+    abstract class Pokemon
     {
-        public string name;
-        public string type;
-        public string weakness;
+        public string Name;
+        public string Strength;
+        public string Weakness;
+        public abstract string Nickname { get; }
 
-        public Pokemon(string name, string type, string weakness)
+        public Pokemon(string name, string strength, string weakness)
         {
-            this.name = name;
-            this.type = type;
-            this.weakness = weakness;
+            this.Name = name;
+            this.Strength = strength;
+            this.Weakness = weakness;
         }
 
-        public void DoBattleCry()
-        {
-            Console.WriteLine("Rawrrrrr!!!! " + name + "!");
-        }
+        public abstract void DoBattleCry();
     }
 
     class Charmander : Pokemon
     {
-        public Charmander(string name) : base(name, "Fire", "Water")
+        private string nickname;
+
+        public Charmander() : base("Charmander", "fire", "water")
         {
-            
+            this.nickname = nickname;
+        }
+
+        public override string Nickname
+        {
+            get { return nickname; }
+        }
+
+        public override void DoBattleCry()
+        {
+            Console.WriteLine(" Charmander Charmander!");
         }
     }
 
     class Squirtle : Pokemon
     {
-        public Squirtle(string name) : base(name, "Water", "Electric")
+        private string nickname;
+
+        public Squirtle(string nickname) : base("Squirtle", "water", "grass")
         {
-            
+            this.nickname = nickname;
+        }
+
+        public override string Nickname
+        {
+            get { return nickname; }
+        }
+
+        public override void DoBattleCry()
+        {
+            Console.WriteLine(" Squirtle Squirtle!");
         }
     }
 
     class Bulbasaur : Pokemon
     {
-        public Bulbasaur(string name) : base(name, "Grass", "Fire")
+        private string nickname;
+
+        public Bulbasaur(string nickname) : base("Bulbasaur", "grass", "fire")
         {
-            
+            this.nickname = nickname;
+        }
+
+        public override string Nickname
+        {
+            get { return nickname; }
+        }
+
+        public override void DoBattleCry()
+        {
+            Console.WriteLine(" Bulba Bulba!");
         }
     }
 }
