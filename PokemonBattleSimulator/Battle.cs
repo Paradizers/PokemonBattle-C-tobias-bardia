@@ -1,22 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System;
 
 namespace PokemonBattleSimulator
 {
     class Battle
     {
-        int round = 0;
-        int maxRounds = 6;
-        int firstTrainerWins = 0;
-        int secondTrainerWins = 0;
-
-        public void StartBattle(string firstTrainer, string secondTrainer, List<Pokeball> trainerBelt, List<Pokeball> trainerBelt2)
+        public static void StartBattle(string firstTrainer, string secondTrainer, List<Pokeball> trainerBelt, List<Pokeball> trainerBelt2)
         {
+            int firstTrainerWins = 0;
+            int secondTrainerWins = 0;
+
             int rounds = Math.Min(trainerBelt.Count, trainerBelt2.Count);
             for (int i = 0; i < rounds; i++)
             {
@@ -28,8 +21,40 @@ namespace PokemonBattleSimulator
                 Pokemon pokemonTrainer2 = trainerBelt2[i].PokemonInside;
                 pokemonTrainer2.DoBattleCry();
 
+                // Kijk wie het voordeel heeft
+                if (pokemonTrainer1.Strength == pokemonTrainer2.Weakness)
+                {
+                    Console.WriteLine($"{firstTrainer} has the advantage!");
+                    firstTrainerWins++;
+                    Console.WriteLine($"{firstTrainer} wins the battle!");
+                }
+                else if (pokemonTrainer1.Weakness == pokemonTrainer2.Strength)
+                {
+                    Console.WriteLine($"{secondTrainer} has the advantage!");
+                    secondTrainerWins++;
+                    Console.WriteLine($"{secondTrainer} wins the battle!");
+                }
+                else
+                {
+                    Console.WriteLine("It's a draw!");
+                }
+
                 Console.WriteLine($"{firstTrainer} calls {trainerBelt[i].PokemonInside.Name} back to the pokeball");
                 Console.WriteLine($"{secondTrainer} calls {trainerBelt2[i].PokemonInside.Name} back to the pokeball");
+            }
+
+            // Wie heeft er gewonnen
+            if (firstTrainerWins > secondTrainerWins)
+            {
+                Console.WriteLine($"{firstTrainer} wins the battle!");
+            }
+            else if (firstTrainerWins < secondTrainerWins)
+            {
+                Console.WriteLine($"{secondTrainer} wins the battle!");
+            }
+            else
+            {
+                Console.WriteLine("It's a tie!");
             }
         }
     }

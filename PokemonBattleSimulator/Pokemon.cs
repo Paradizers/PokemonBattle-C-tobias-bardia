@@ -7,7 +7,7 @@ namespace PokemonBattleSimulator
         public string Name;
         public string Strength;
         public string Weakness;
-        protected string nickname; 
+        protected string nickname;
 
         public abstract string Nickname { get; }
 
@@ -16,7 +16,7 @@ namespace PokemonBattleSimulator
             this.Name = name;
             this.Strength = strength;
             this.Weakness = weakness;
-            this.nickname = nickname; 
+            this.nickname = nickname;
         }
 
         public abstract void DoBattleCry();
@@ -35,7 +35,7 @@ namespace PokemonBattleSimulator
 
         public override void DoBattleCry()
         {
-            Console.WriteLine(" Charmander Charmander!");
+            Console.WriteLine("Charmander Charmander!");
         }
     }
 
@@ -52,7 +52,7 @@ namespace PokemonBattleSimulator
 
         public override void DoBattleCry()
         {
-            Console.WriteLine(" Squirtle Squirtle!");
+            Console.WriteLine("Squirtle Squirtle!");
         }
     }
 
@@ -69,7 +69,7 @@ namespace PokemonBattleSimulator
 
         public override void DoBattleCry()
         {
-            Console.WriteLine(" Bulba Bulba!");
+            Console.WriteLine("Bulba Bulba!");
         }
     }
 }
