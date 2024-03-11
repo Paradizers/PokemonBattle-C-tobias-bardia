@@ -7,13 +7,16 @@ namespace PokemonBattleSimulator
         public string Name;
         public string Strength;
         public string Weakness;
+        protected string nickname; 
+
         public abstract string Nickname { get; }
 
-        public Pokemon(string name, string strength, string weakness)
+        public Pokemon(string name, string strength, string weakness, string nickname)
         {
             this.Name = name;
             this.Strength = strength;
             this.Weakness = weakness;
+            this.nickname = nickname; 
         }
 
         public abstract void DoBattleCry();
@@ -21,11 +24,8 @@ namespace PokemonBattleSimulator
 
     class Charmander : Pokemon
     {
-        private string nickname;
-
-        public Charmander() : base("Charmander", "fire", "water")
+        public Charmander(string nickname) : base("Charmander", "fire", "water", nickname)
         {
-            this.nickname = nickname;
         }
 
         public override string Nickname
@@ -41,11 +41,8 @@ namespace PokemonBattleSimulator
 
     class Squirtle : Pokemon
     {
-        private string nickname;
-
-        public Squirtle(string nickname) : base("Squirtle", "water", "grass")
+        public Squirtle(string nickname) : base("Squirtle", "water", "grass", nickname)
         {
-            this.nickname = nickname;
         }
 
         public override string Nickname
@@ -61,11 +58,8 @@ namespace PokemonBattleSimulator
 
     class Bulbasaur : Pokemon
     {
-        private string nickname;
-
-        public Bulbasaur(string nickname) : base("Bulbasaur", "grass", "fire")
+        public Bulbasaur(string nickname) : base("Bulbasaur", "grass", "fire", nickname)
         {
-            this.nickname = nickname;
         }
 
         public override string Nickname

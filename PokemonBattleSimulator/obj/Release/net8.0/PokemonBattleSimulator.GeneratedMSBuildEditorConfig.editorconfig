@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PokemonBattleSimulator
-build_property.ProjectDir = C:\Users\shind\Source\Repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\
+build_property.ProjectDir = C:\Users\shind\source\repos\Paradizers\PokemonBattle-C-tobias-bardia\PokemonBattleSimulator\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
