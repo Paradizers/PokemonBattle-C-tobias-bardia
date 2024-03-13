@@ -14,7 +14,7 @@ namespace PokemonBattleSimulator
             string firstTrainer = Console.ReadLine();
 
             Console.WriteLine("Name of the second trainer:");
-            string secondTrainer = Console.ReadLine();
+            string secondTrainer = Console.ReadLine(); sdjasdsad
 
             for (int i = 0; i < 2; i++)
             {

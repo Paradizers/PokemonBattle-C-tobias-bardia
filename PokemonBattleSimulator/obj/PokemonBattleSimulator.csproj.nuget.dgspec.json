@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shind\\source\\repos\\Paradizers\\PokemonBattle-C-tobias-bardia\\PokemonBattleSimulator\\PokemonBattleSimulator.csproj": {}
+    "C:\\Users\\bardi\\Documents\\GitHub\\PokemonBattle-C-tobias-bardia\\PokemonBattleSimulator\\PokemonBattleSimulator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shind\\source\\repos\\Paradizers\\PokemonBattle-C-tobias-bardia\\PokemonBattleSimulator\\PokemonBattleSimulator.csproj": {
+    "C:\\Users\\bardi\\Documents\\GitHub\\PokemonBattle-C-tobias-bardia\\PokemonBattleSimulator\\PokemonBattleSimulator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shind\\source\\repos\\Paradizers\\PokemonBattle-C-tobias-bardia\\PokemonBattleSimulator\\PokemonBattleSimulator.csproj",
+        "projectUniqueName": "C:\\Users\\bardi\\Documents\\GitHub\\PokemonBattle-C-tobias-bardia\\PokemonBattleSimulator\\PokemonBattleSimulator.csproj",
         "projectName": "PokemonBattleSimulator",
-        "projectPath": "C:\\Users\\shind\\source\\repos\\Paradizers\\PokemonBattle-C-tobias-bardia\\PokemonBattleSimulator\\PokemonBattleSimulator.csproj",
-        "packagesPath": "C:\\Users\\shind\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shind\\source\\repos\\Paradizers\\PokemonBattle-C-tobias-bardia\\PokemonBattleSimulator\\obj\\",
+        "projectPath": "C:\\Users\\bardi\\Documents\\GitHub\\PokemonBattle-C-tobias-bardia\\PokemonBattleSimulator\\PokemonBattleSimulator.csproj",
+        "packagesPath": "C:\\Users\\bardi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bardi\\Documents\\GitHub\\PokemonBattle-C-tobias-bardia\\PokemonBattleSimulator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\shind\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bardi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -55,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
