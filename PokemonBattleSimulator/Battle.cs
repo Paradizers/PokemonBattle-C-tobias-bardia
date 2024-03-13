@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PokemonBattleSimulator
 {
-    class Battle
+    class BattleArena
     {
         public static void StartBattle(string firstTrainer, string secondTrainer, List<Pokeball> trainerBelt, List<Pokeball> trainerBelt2)
         {

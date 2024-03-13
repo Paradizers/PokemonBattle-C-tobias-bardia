@@ -14,7 +14,7 @@ namespace PokemonBattleSimulator
             string firstTrainer = Console.ReadLine();
 
             Console.WriteLine("Name of the second trainer:");
-            string secondTrainer = Console.ReadLine(); sdjasdsad
+            string secondTrainer = Console.ReadLine();
 
             for (int i = 0; i < 2; i++)
             {
@@ -58,7 +58,8 @@ namespace PokemonBattleSimulator
             Shuffle(trainerBelt2, rng);
 
             // Start the battle    
-            Battle.StartBattle(firstTrainer, secondTrainer, trainerBelt, trainerBelt2);
+            BattleArena.StartBattle(firstTrainer, secondTrainer, trainerBelt, trainerBelt2);
+
 
             Console.ReadLine();
         }
