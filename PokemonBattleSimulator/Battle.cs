@@ -5,7 +5,7 @@ namespace PokemonBattleSimulator
 {
     class BattleArena
     {
-        public static void StartBattle(string firstTrainer, string secondTrainer, List<Pokeball> trainerBelt, List<Pokeball> trainerBelt2)
+        public static int StartBattle(string firstTrainer, string secondTrainer, List<Pokeball> trainerBelt, List<Pokeball> trainerBelt2)
         {
             int firstTrainerWins = 0;
             int secondTrainerWins = 0;
@@ -21,7 +21,6 @@ namespace PokemonBattleSimulator
                 Pokemon pokemonTrainer2 = trainerBelt2[i].PokemonInside;
                 pokemonTrainer2.DoBattleCry();
 
-                // Kijk wie het voordeel heeft
                 if (pokemonTrainer1.Strength == pokemonTrainer2.Weakness)
                 {
                     Console.WriteLine($"{firstTrainer} has the advantage!");
@@ -43,18 +42,20 @@ namespace PokemonBattleSimulator
                 Console.WriteLine($"{secondTrainer} calls {trainerBelt2[i].PokemonInside.Name} back to the pokeball");
             }
 
-            // Wie heeft er gewonnen
             if (firstTrainerWins > secondTrainerWins)
             {
-                Console.WriteLine($"{firstTrainer} wins the battle!");
+                Console.WriteLine($"{firstTrainer} wins the match!");
+                return 1; // Indicates first trainer wins
             }
-            else if (firstTrainerWins < secondTrainerWins)
+            else if (secondTrainerWins > firstTrainerWins)
             {
-                Console.WriteLine($"{secondTrainer} wins the battle!");
+                Console.WriteLine($"{secondTrainer} wins the match!");
+                return 2; // Indicates second trainer wins
             }
             else
             {
-                Console.WriteLine("It's a tie!");
+                Console.WriteLine("The match is a tie!");
+                return 0; // Indicates a tie
             }
         }
     }

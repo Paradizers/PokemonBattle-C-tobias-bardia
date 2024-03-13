@@ -16,50 +16,61 @@ namespace PokemonBattleSimulator
             Console.WriteLine("Name of the second trainer:");
             string secondTrainer = Console.ReadLine();
 
-            for (int i = 0; i < 2; i++)
+            int firstTrainerTotalWins = 0;
+            int secondTrainerTotalWins = 0;
+
+            bool keepFighting = true;
+
+            while (keepFighting)
             {
-                Pokeball pokeball = new Pokeball(80, "red", new Charmander("Charmander" + (i + 1)));
-                trainerBelt.Add(pokeball);
+                trainerBelt.Clear();
+                trainerBelt2.Clear();
+
+                for (int i = 0; i < 2; i++)
+                {
+                    trainerBelt.Add(new Pokeball(80, "red", new Charmander("Charmander" + (i + 1))));
+                    trainerBelt2.Add(new Pokeball(80, "red", new Charmander("Charmander" + (i + 1))));
+                }
+
+                for (int i = 0; i < 2; i++)
+                {
+                    trainerBelt.Add(new Pokeball(80, "blue", new Squirtle("Squirtle" + (i + 1))));
+                    trainerBelt2.Add(new Pokeball(80, "blue", new Squirtle("Squirtle" + (i + 1))));
+                }
+
+                for (int i = 0; i < 2; i++)
+                {
+                    trainerBelt.Add(new Pokeball(80, "grass", new Bulbasaur("Bulbasaur" + (i + 1))));
+                    trainerBelt2.Add(new Pokeball(80, "grass", new Bulbasaur("Bulbasaur" + (i + 1))));
+                }
+
+                // Shuffle the lists
+                Random rng = new Random();
+                Shuffle(trainerBelt, rng);
+                Shuffle(trainerBelt2, rng);
+
+                // Start the battle
+                int result = BattleArena.StartBattle(firstTrainer, secondTrainer, trainerBelt, trainerBelt2);
+                if (result == 1)
+                {
+                    firstTrainerTotalWins++;
+                }
+                else if (result == 2)
+                {
+                    secondTrainerTotalWins++;
+                }
+
+                // Show current score
+                Console.WriteLine($"Current Score: {firstTrainer} {firstTrainerTotalWins} - {secondTrainerTotalWins} {secondTrainer}");
+
+                Console.WriteLine("Do you want to battle again? (yes/no)");
+                string answer = Console.ReadLine().ToLower();
+                keepFighting = answer == "yes";
             }
 
-            for (int i = 0; i < 2; i++)
-            {
-                Pokeball pokeball = new Pokeball(80, "blue", new Squirtle("Squirtle" + (i + 1)));
-                trainerBelt.Add(pokeball);
-            }
-
-            for (int i = 0; i < 2; i++)
-            {
-                Pokeball pokeball = new Pokeball(80, "grass", new Bulbasaur("Bulbasaur" + (i + 1)));
-                trainerBelt.Add(pokeball);
-            }
-
-            for (int i = 0; i < 2; i++)
-            {
-                Pokeball pokeball = new Pokeball(80, "red", new Charmander("Charmander" + (i + 1)));
-                trainerBelt2.Add(pokeball);
-            }
-
-            for (int i = 0; i < 2; i++)
-            {
-                Pokeball pokeball = new Pokeball(80, "blue", new Squirtle("Squirtle" + (i + 1)));
-                trainerBelt2.Add(pokeball);
-            }
-
-            for (int i = 0; i < 2; i++)
-            {
-                Pokeball pokeball = new Pokeball(80, "grass", new Bulbasaur("Bulbasaur" + (i + 1)));
-                trainerBelt2.Add(pokeball);
-            }
-
-            // Shuffle the lists
-            Random rng = new Random();
-            Shuffle(trainerBelt, rng);
-            Shuffle(trainerBelt2, rng);
-
-            // Start the battle    
-            BattleArena.StartBattle(firstTrainer, secondTrainer, trainerBelt, trainerBelt2);
-
+            Console.WriteLine("Final Score:");
+            Console.WriteLine($"{firstTrainer}: {firstTrainerTotalWins}");
+            Console.WriteLine($"{secondTrainer}: {secondTrainerTotalWins}");
 
             Console.ReadLine();
         }
