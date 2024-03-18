@@ -2,7 +2,7 @@
 
 namespace PokemonBattleSimulator
 {
-    class Pokeball
+     class  Pokeball
     {
         public int catchRate;
         public string color;

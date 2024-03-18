@@ -32,7 +32,7 @@ namespace PokemonBattleSimulator
         {
             get { return nickname; }
         }
-
+     
         public override void DoBattleCry()
         {
             Console.WriteLine("Charmander Charmander!");

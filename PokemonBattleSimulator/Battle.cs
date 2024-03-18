@@ -45,17 +45,17 @@ namespace PokemonBattleSimulator
             if (firstTrainerWins > secondTrainerWins)
             {
                 Console.WriteLine($"{firstTrainer} wins the match!");
-                return 1; // Indicates first trainer wins
+                return 1; 
             }
             else if (secondTrainerWins > firstTrainerWins)
             {
                 Console.WriteLine($"{secondTrainer} wins the match!");
-                return 2; // Indicates second trainer wins
+                return 2; 
             }
             else
             {
                 Console.WriteLine("The match is a tie!");
-                return 0; // Indicates a tie
+                return 0; 
             }
         }
     }
