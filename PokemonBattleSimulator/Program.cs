@@ -14,7 +14,7 @@ namespace PokemonBattleSimulator
             string firstTrainer = Console.ReadLine();
 
             Console.WriteLine("Name of the second trainer:");
-            string secondTrainer = Console.ReadLine(); 
+            string secondTrainer = Console.ReadLine();
 
             int firstTrainerTotalWins = 0;
             int secondTrainerTotalWins = 0;
@@ -49,8 +49,10 @@ namespace PokemonBattleSimulator
                 Shuffle(trainerBelt, rng);
                 Shuffle(trainerBelt2, rng);
 
-                // Start the battle
+
+                // Start the battle    
                 int result = BattleArena.StartBattle(firstTrainer, secondTrainer, trainerBelt, trainerBelt2);
+
                 if (result == 1)
                 {
                     firstTrainerTotalWins++;
@@ -68,49 +70,10 @@ namespace PokemonBattleSimulator
                 keepFighting = answer == "yes";
             }
 
-<<<<<<< Updated upstream
+
             Console.WriteLine("Final Score:");
             Console.WriteLine($"{firstTrainer}: {firstTrainerTotalWins}");
             Console.WriteLine($"{secondTrainer}: {secondTrainerTotalWins}");
-=======
-            for (int i = 0; i < 2; i++)
-            {
-                Pokeball pokeball = new Pokeball(80, "blue", new Squirtle("Squirtle" + (i + 1)));
-                trainerBelt.Add(pokeball);
-            }
-
-            for (int i = 0; i < 2; i++)
-            {
-                Pokeball pokeball = new Pokeball(80, "grass", new Bulbasaur("Bulbasaur" + (i + 1)));
-                trainerbelt.add(pokeball);
-            }
-
-            for (int i = 0; i < 2; i++)
-            {
-                Pokeball pokeball = new Pokeball(80, "red", new Charmander("Charmander" + (i + 1)));
-                trainerBelt2.Add(pokeball);
-            }
-
-            for (int i = 0; i < 2; i++)
-            {
-                Pokeball pokeball = new Pokeball(80, "blue", new Squirtle("Squirtle" + (i + 1)));
-                trainerBelt2.Add(pokeball);
-            }
-
-            for (int i = 0; i < 2; i++)
-            {
-                Pokeball pokeball = new Pokeball(80, "grass", new Bulbasaur("Bulbasaur" + (i + 1)));
-                trainerBelt2.Add(pokeball);
-            }
-
-            // Shuffle the lists
-            Random rng = new Random();
-            Shuffle(trainerBelt, rng);
-            Shuffle(trainerBelt2, rng);
-
-            // Start the battle    
-            Battle.StartBattle(firstTrainer, secondTrainer, trainerBelt, trainerBelt2);
->>>>>>> Stashed changes
 
             Console.ReadLine();
         }

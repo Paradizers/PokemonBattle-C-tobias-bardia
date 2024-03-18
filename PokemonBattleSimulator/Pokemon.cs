@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace PokemonBattleSimulator
+﻿namespace PokemonBattleSimulator
 {
     abstract class Pokemon
     {
@@ -32,7 +30,7 @@ namespace PokemonBattleSimulator
         {
             get { return nickname; }
         }
-     
+
         public override void DoBattleCry()
         {
             Console.WriteLine("Charmander Charmander!");

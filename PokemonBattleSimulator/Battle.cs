@@ -23,21 +23,21 @@ namespace PokemonBattleSimulator
                 Pokemon pokemonTrainer2 = trainerBelt2[i].PokemonInside;
                 pokemonTrainer2.DoBattleCry();
 
-<<<<<<< Updated upstream
-=======
                 // Check who has the advantage
->>>>>>> Stashed changes
+
                 if (pokemonTrainer1.Strength == pokemonTrainer2.Weakness)
                 {
                     Console.WriteLine($"{firstTrainer} has the advantage!");
                     firstTrainerWins++;
                     Console.WriteLine($"{firstTrainer} wins the battle!");
+                    firstTrainerTotalWins++;
                 }
                 else if (pokemonTrainer1.Weakness == pokemonTrainer2.Strength)
                 {
                     Console.WriteLine($"{secondTrainer} has the advantage!");
                     secondTrainerWins++;
                     Console.WriteLine($"{secondTrainer} wins the battle!");
+                    secondTrainerTotalWins++;
                 }
                 else
                 {
@@ -48,47 +48,21 @@ namespace PokemonBattleSimulator
                 Console.WriteLine($"{secondTrainer} calls {trainerBelt2[i].PokemonInside.Name} back to the pokeball");
             }
 
-<<<<<<< Updated upstream
-            if (firstTrainerWins > secondTrainerWins)
+            // Determine the winner of the match
+            if (firstTrainerTotalWins > secondTrainerTotalWins)
             {
                 Console.WriteLine($"{firstTrainer} wins the match!");
-                return 1; 
-=======
-            // Determine the winner
-            if (firstTrainerWins > secondTrainerWins)
-            {
-                Console.WriteLine($"{firstTrainer} wins the battle!");
-                firstTrainerTotalWins++;
->>>>>>> Stashed changes
+                return 1;
             }
-            else if (secondTrainerWins > firstTrainerWins)
+            else if (secondTrainerTotalWins > firstTrainerTotalWins)
             {
-<<<<<<< Updated upstream
                 Console.WriteLine($"{secondTrainer} wins the match!");
-                return 2; 
-=======
-                Console.WriteLine($"{secondTrainer} wins the battle!");
-                secondTrainerTotalWins++;
->>>>>>> Stashed changes
+                return 2;
             }
             else
             {
                 Console.WriteLine("The match is a tie!");
-                return 0; 
-            }
-
-            Console.WriteLine("Do you want to go again:");
-            string answer = Console.ReadLine();
-            if (answer.ToLower() == "yes")
-            {
-               Console.WriteLine($"{firstTrainer} has won {firstTrainerTotalWins} times");
-               Console.WriteLine($"{secondTrainer} has won {secondTrainerTotalWins} times");
-               StartBattle(firstTrainer, secondTrainer, trainerBelt, trainerBelt2);
-            }
-            else
-            {
-                Console.WriteLine($"{firstTrainer} has won {firstTrainerTotalWins} times");
-                Console.WriteLine($"{secondTrainer} has won {secondTrainerTotalWins} times");
+                return 0;
             }
         }
     }
